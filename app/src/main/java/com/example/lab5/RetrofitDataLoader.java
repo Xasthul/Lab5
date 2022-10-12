@@ -41,24 +41,19 @@ public class RetrofitDataLoader{
                             String key = it.next();
                             String value = ratesObject.get(key).toString();
                             ratesList.add(key + " - " + value);
-
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
-                    MainActivity.adapter = new ArrayAdapter<>(ctx, R.layout.mytextview, ratesList);
+                    MainActivity.adapter = new ArrayAdapter<>(ctx, R.layout.listview_items_style, ratesList);
                     MainActivity.ratesListView.setAdapter(MainActivity.adapter);
                 }
-
             }
-
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 t.printStackTrace();
-
             }
         });
         return "";

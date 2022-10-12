@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         tvMain = findViewById(R.id.cryptocurrency_rates_textView);
         ratesList = new ArrayList<>();
 
-        adapter = new ArrayAdapter<>(this, R.layout.mytextview, ratesList);
+        adapter = new ArrayAdapter<>(this, R.layout.listview_items_style, ratesList);
         ratesListView.setAdapter(adapter);
 
         RetrofitDataLoader rt = new RetrofitDataLoader();
